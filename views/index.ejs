@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9ee08db294.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row bg_image">
+                <div class="col d-flex align-items-center justify-content-center text-light overlay">
+                    <h1 class="display-1">KTT TECHNICAL EVALUATION</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-sm-3 col-xl-2 px-sm-2 px-0 bg-light shadow-sm">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2">
+                    <div class="d-none d-sm-flex flex-sm-column justify-content-center text-center my-3" data-aos="flip-left">
+                        <img src="/images/me.jpg" class="rounded mx-auto d-block w-75 " alt="me">  
+                        <p class="lead">Víctor Mendoza</p>                      
+                    </div>                            
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
+                        <span class="h4 d-none d-sm-inline" data-aos="fade-right">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="800">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fa-solid fa-house fa-lg"></i><span class="px-3 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="900">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fa-solid fa-calendar-check fa-xl"></i></i><span class="px-3 d-none d-sm-inline">Confirmed cases</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1000">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fa-solid fa-book-skull fa-xl"></i><span class="px-3 d-none d-sm-inline">Deaths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1100">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fa-solid fa-syringe fa-xl"></i><span class="px-3 d-none d-sm-inline">Vaccines administered</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col py-3">
+                <%- include(page); %>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
