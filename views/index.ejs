@@ -8,7 +8,11 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <!-- <script src="/js/menu.js"></script> -->
     <script src="https://kit.fontawesome.com/9ee08db294.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 </head>
 <body>
     <header>
@@ -33,12 +37,12 @@
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="800">
-                            <a href="#" class="nav-link align-middle px-0">
+                            <a href="/" class="nav-link align-middle px-0">
                                 <i class="fa-solid fa-house fa-lg"></i><span class="px-3 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="900">
-                            <a href="#" class="nav-link align-middle px-0">
+                            <a href="/confirmed" class="nav-link align-middle px-0">
                                 <i class="fa-solid fa-calendar-check fa-xl"></i></i><span class="px-3 d-none d-sm-inline">Confirmed cases</span>
                             </a>
                         </li>
@@ -48,7 +52,7 @@
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1100">
-                            <a href="#" class="nav-link align-middle px-0">
+                            <a href="/vaccines" class="nav-link align-middle px-0">
                                 <i class="fa-solid fa-syringe fa-xl"></i><span class="px-3 d-none d-sm-inline">Vaccines administered</span>
                             </a>
                         </li>
@@ -64,6 +68,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        $(document).ready( function () {
+            $('#vaccinated').DataTable({
+                "order": [2,'desc']
+            });
+        } );
     </script>
 </body>
 </html>
