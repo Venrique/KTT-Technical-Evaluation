@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <!-- <script src="/js/menu.js"></script> -->
     <script src="https://kit.fontawesome.com/9ee08db294.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
     <header>
         <div class="container-fluid">
@@ -25,36 +34,44 @@
             </div>
         </div>
     </header>
+    <button type="button" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="col-auto col-sm-3 col-xl-2 px-sm-2 px-0 bg-light shadow-sm">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2">
-                    <div class="d-none d-sm-flex flex-sm-column justify-content-center text-center my-3" data-aos="flip-left">
-                        <img src="/images/me.jpg" class="rounded mx-auto d-block w-75 " alt="me">  
-                        <p class="lead">Víctor Mendoza</p>                      
-                    </div>                            
+                    <div class="d-none d-sm-flex flex-sm-column justify-content-center text-center my-3"
+                        data-aos="flip-left">
+                        <img src="/images/me.jpg" class="rounded mx-auto d-block w-75 " alt="me">
+                        <p class="lead">Víctor Mendoza</p>
+                    </div>
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
                         <span class="h4 d-none d-sm-inline" data-aos="fade-right">Menu</span>
                     </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="800">
                             <a href="/" class="nav-link align-middle px-0">
-                                <i class="fa-solid fa-house fa-lg"></i><span class="px-3 d-none d-sm-inline">Home</span>
+                                <i class="fa-solid fa-house fa-lg"></i><span class="px-3 d-none d-sm-inline text-dark">Home</span>
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="900">
                             <a href="/confirmed" class="nav-link align-middle px-0">
-                                <i class="fa-solid fa-calendar-check fa-xl"></i></i><span class="px-3 d-none d-sm-inline">Confirmed cases</span>
+                                <i class="fa-solid fa-calendar-check fa-xl"></i></i><span
+                                    class="px-3 d-none d-sm-inline text-dark">Confirmed cases</span>
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1000">
                             <a href="/deaths" class="nav-link align-middle px-0">
-                                <i class="fa-solid fa-book-skull fa-xl"></i><span class="px-3 d-none d-sm-inline">Deaths</span>
+                                <i class="fa-solid fa-book-skull fa-xl"></i><span
+                                    class="px-3 d-none d-sm-inline text-dark">Deaths</span>
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1100">
                             <a href="/vaccines" class="nav-link align-middle px-0">
-                                <i class="fa-solid fa-syringe fa-xl"></i><span class="px-3 d-none d-sm-inline">Vaccines administered</span>
+                                <i class="fa-solid fa-syringe fa-xl"></i><span class="px-3 d-none d-sm-inline text-dark">Vaccines
+                                    administered</span>
                             </a>
                         </li>
                     </ul>
@@ -65,16 +82,39 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
 
-        $(document).ready( function () {
-            $('#vaccinated').DataTable({
-                "order": [2,'desc']
-            });          
-        } );
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
+
 </html>
