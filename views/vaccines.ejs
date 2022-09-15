@@ -17,13 +17,13 @@
                                 <%= el.country %>
                             </td>
                             <td>
-                                <%= Intl.NumberFormat().format(el.administered) %>
+                                <%= Intl.NumberFormat('en-US').format(el.administered) == 'NaN' ? 'N/A' : Intl.NumberFormat('en-US').format(el.administered) %>
                             </td>
                             <td>
-                                <%= Intl.NumberFormat().format(el.vaccinated) %>
+                                <%= Intl.NumberFormat('en-US').format(el.vaccinated) == 'NaN' ? 'N/A' : Intl.NumberFormat('en-US').format(el.vaccinated) %>
                             </td>
                             <td>
-                                <%= Intl.NumberFormat().format(el.partially) %>
+                                <%= Intl.NumberFormat('en-US').format(el.partially) == 'NaN' ? 'N/A' : Intl.NumberFormat('en-US').format(el.partially) %>
                             </td>
                         </tr>
                         <% }); %>

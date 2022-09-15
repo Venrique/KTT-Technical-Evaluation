@@ -17,14 +17,14 @@
                                 <%= el.country %>
                             </td>
                             <td>
-                                <%= Intl.NumberFormat().format(el.population) %>
+                                <%= Intl.NumberFormat('en-US').format(el.population) == 'NaN' ? 'N/A' : Intl.NumberFormat('en-US').format(el.population) %>
                             </td>
                             <td>
-                                <%= Intl.NumberFormat().format(el.confirmed) %>
+                                <%= Intl.NumberFormat('en-US').format(el.confirmed) == 'NaN' ? 'N/A' : Intl.NumberFormat('en-US').format(el.confirmed) %>
                             </td>
                             <td>
                                 <%= Intl.NumberFormat('en-US',{ style: 'percent' , minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2 }).format((el.confirmed/el.population)) %>
+                                    maximumFractionDigits: 2 }).format((el.confirmed/el.population)) == 'NaN%' ? 'N/A' : Intl.NumberFormat('en-US',{ style: 'percent' , minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((el.confirmed/el.population)) %>
                             </td>
                         </tr>
                         <% }); %>
