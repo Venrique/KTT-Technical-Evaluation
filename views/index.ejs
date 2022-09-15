@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/9ee08db294.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <header>
@@ -47,7 +48,7 @@
                             </a>
                         </li>
                         <li class="nav-item py-2" data-aos="fade-right" data-aos-duration="1000">
-                            <a href="#" class="nav-link align-middle px-0">
+                            <a href="/deaths" class="nav-link align-middle px-0">
                                 <i class="fa-solid fa-book-skull fa-xl"></i><span class="px-3 d-none d-sm-inline">Deaths</span>
                             </a>
                         </li>
@@ -72,7 +73,7 @@
         $(document).ready( function () {
             $('#vaccinated').DataTable({
                 "order": [2,'desc']
-            });
+            });          
         } );
     </script>
 </body>

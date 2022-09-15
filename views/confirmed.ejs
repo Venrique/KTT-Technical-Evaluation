@@ -1,0 +1,97 @@
+<h3>Confirmed Cases</h3>
+<hr>
+<div class="container-fluid">
+    <div class="row" style="overflow-x: auto; font-size: 1vw;">
+        <table class="table table-striped table-hover" id="confirmed">
+            <thead>
+                <th scope="col">Coutry</th>
+                <th scope="col">Population</th>
+                <th scope="col">Confirmed Cases</th>
+                <th scope="col">Percentage</th>
+            </thead>
+            <tbody>
+                <% confirmed.Confirmed.forEach((el, index)=> {%>
+                    <tr>
+                        <td>
+                            <%= el.country %>
+                        </td>
+                        <td>
+                            <%= Intl.NumberFormat().format(el.population) %>
+                        </td>
+                        <td>
+                            <%= Intl.NumberFormat().format(el.confirmed) %>
+                        </td>
+                        <td>
+                            <%= Intl.NumberFormat('en-US',{ style: 'percent' , minimumFractionDigits: 2,
+                                maximumFractionDigits: 2 }).format((el.confirmed/el.population)) %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-6">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-6">
+
+        </div>
+    </div>
+</div>
+<script>
+
+    var table = $('#confirmed').DataTable({
+        "order": [2, 'desc']
+    });
+
+    var row = table.rows().data()
+    var labels = []
+    var chartData = []
+    var colors = []
+
+    for (let i = 1; i <= 10; i++) {
+        labels.push(row[i][0])
+        chartData.push(parseInt(row[i][2].split(',').join('')))
+        colors.push(getRandomColor())
+    }
+
+    console.log(chartData)
+    //setup
+
+    function getRandomColor() {
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        return "rgba(" + r + "," + g + "," + b + ", 0.3)";
+    }
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: '# of Votes',
+            data: chartData,
+            backgroundColor: colors,
+            borderWidth: 1
+        }]
+    };
+
+    //options
+    const options = {
+    }
+
+    //config
+    const config = {
+        type: 'pie',
+        data,
+        options
+    };
+
+    //render
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script>
