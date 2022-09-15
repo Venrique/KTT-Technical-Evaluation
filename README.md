@@ -6,7 +6,7 @@ This is a mini-project for displaying information about the ongoing COVID-19 pan
 ## Installation
 
 
-Download the source code and make sure you have node js installed on your computer.
+Download the source code and make sure you have Node.js installed on your computer.
 
 Install all dependencies using the following command inside the project folder:
 
@@ -20,7 +20,7 @@ Then run the local server:
 > npm start
 ```
 
-That's it! now you can test the website just typing **localhost:3000** on your browser.
+That's it! now you can test the website by just typing **localhost:3000** on your browser.
 
 ## What you will find
 
@@ -31,7 +31,7 @@ This site contains three main pages:
 
 - **Deaths:** Number of deaths per country caused by covid-19.
   
-- **Vaccines Administered:** This table shows total of vaccines administered, people vaccinated and people partially vaccinated per country.
+- **Vaccines Administered:** This table shows the total of vaccines administered, people vaccinated and people partially vaccinated per country.
 
 At the end of each page you will find a pie chart with the top 10 countries of each topic.
 
@@ -57,7 +57,7 @@ There are a couple of problems related to the underlying API the website uses to
    
 2. Because /cases does not work all the time, I decided to get the number of deaths from /history?status=deaths. This is more a workaround rather than an issue.
    
-3. Sometimes the API will freeze when a request is made. Just refresh de page and everuthing should work perfectly.
+3. Sometimes the API will freeze when a request is made. Just refresh de page and everything should work perfectly.
 
 ## Screenshots
 
