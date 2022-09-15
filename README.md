@@ -5,7 +5,6 @@ This is a mini-project for displaying information about the ongoing COVID-19 pan
 
 ## Installation
 
----
 
 Download the source code and make sure you have node js installed on your computer.
 
@@ -25,7 +24,6 @@ That's it! now you can test the website just typing **localhost:3000** on your b
 
 ## What you will find
 
----
 
 This site contains three main pages:
 
@@ -39,8 +37,34 @@ At the end of each page you will find a pie chart with the top 10 countries of e
 
 ## How it was made
 
----
-
 All the data is fetch in real time from [M-Media-Group Covid-19 API](https://github.com/M-Media-Group/Covid-19-API)
 
-Node.js (*v16.14.2*) with Express was used for the backend 
+Node.js (*v16.14.2*) with Express was used for the backend. A complete list of the libraries used, alongside their versions can be found in the package.json file.
+
+To make the frontend nice-looking, a couple of libraries where implemented:
+
+- Bootstrap 5.2 
+- Font Awesome Icons
+- AOS (Animate On Scroll)
+- DataTables
+- Chart.js
+
+## Known issues
+
+There are a couple of problems related to the underlying API the website uses to gather all the information.
+
+1. Confirmed cases could throw an error when accesed. This is because the route /cases from the API where the data is fetched, seems to stop working randomly. This may be because the API has a limited amounts of calls each day but I am not really sure. If it does not work check again in a couple of hours.
+   
+2. Because /cases does not work all the time, I decided to get the number of deaths from /history?status=deaths. This is more a workaround rather than an issue.
+   
+3. Sometimes the API will freeze when a request is made. Just refresh de page and everuthing should work perfectly.
+
+## Screenshots
+
+### Confirmed cases
+
+![confirmed cases](public/images/readmeScreenshot1.png)
+
+### Number of deaths chart
+
+![deaths](public/images/readmeScreenshot2.png)
