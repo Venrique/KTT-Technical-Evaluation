@@ -3,18 +3,20 @@ const express = require('express');
 const router = express.Router();
 const fetch = require("node-fetch");
 
-
+//HOME PAGE
 router.get('/', function (req, res) {
     res.render('index', { title: 'KTT Technical Evaluation', page: 'home' });
 
 });
 
+//CONFIRMED CASES
 router.get('/confirmed', async (req, res) => {
     const API_URL = "https://covid-api.mmediagroup.fr/v1/cases"
     const options = {
         "method": "GET",
     }
 
+    //Get the data
     const response = await fetch(API_URL, options)
         .then(res => res.json())
         .catch(e => {
@@ -23,7 +25,8 @@ router.get('/confirmed', async (req, res) => {
                 error: e,
             });
         });
-
+    
+    //Create object the necessary information
     var confirmed = {}
     var key = 'Confirmed'
     confirmed[key] = [];
@@ -37,9 +40,11 @@ router.get('/confirmed', async (req, res) => {
         confirmed[key].push(data);
     });
 
+    //Render de page
     res.render('index',{title: 'KTT Technical Evaluation', page: 'confirmed', confirmed });
 });
 
+//VACCINES ADMINISTERED
 router.get('/vaccines', async (req, res) => {
     const API_URL = "https://covid-api.mmediagroup.fr/v1/vaccines"
     const options = {
@@ -72,6 +77,7 @@ router.get('/vaccines', async (req, res) => {
     res.render('index', { title: 'KTT Technical Evaluation', page: 'vaccines', vac });
 });
 
+//NUMBER OF DEATHS
 router.get('/deaths', async (req, res) => {
 
     const API_URL = "https://covid-api.mmediagroup.fr/v1/history?status=deaths"
@@ -92,6 +98,7 @@ router.get('/deaths', async (req, res) => {
     var key = 'Deaths'
     deaths[key] = [];
     
+    //Get yesterday deaths
     let currDate = new Date();
     let date_ob = new Date(currDate.getTime() - 86400000*2)
 

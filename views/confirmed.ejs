@@ -46,10 +46,12 @@
 </section>
 <script>
 
+    //Setup DataTables library
     var table = $('#confirmed').DataTable({
         "order": [2, 'desc']
     });
 
+    //Get table data to use it in the chart
     var row = table.rows().data()
     var labels = []
     var chartData = []
