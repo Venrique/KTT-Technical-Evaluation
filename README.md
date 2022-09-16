@@ -53,7 +53,7 @@ To make the frontend nice-looking, a couple of libraries where implemented:
 
 There are a couple of problems related to the underlying API the website uses to gather all the information.
 
-1. Confirmed cases could throw an error when accesed. This is because the route /cases from the API where the data is fetched, seems to stop working randomly. This may be because the API has a limited amounts of calls each day but I am not really sure. If it does not work check again in a couple of hours.
+1. Confirmed cases could throw an error when accessed. This is because the route /cases from the API where the data is fetched, seems to stop working randomly. This may be because the API has a limited amounts of calls each day but I am not really sure. If it does not work check again in a couple of hours.
    
 2. Because /cases does not work all the time, I decided to get the number of deaths from /history?status=deaths. This is more a workaround rather than an issue.
    
